@@ -48,12 +48,16 @@ Please use `make <target>' where <target> is one of
 The built documentation is then available in the build/<target> directory (build/html for 'make html', build/singlehtml for 'make singlehtml', etc ...)
 Do not hesitate to document more here if needed ;-)
 
+With a basic dev workstation setup from Ubuntu 24.04 I successfully built: 
+ - html, dirhtml, singlehtml
+ - man (you'll have to install `binaryninjaapi.1` manually in /opt/binaryninja/man/man1 and add dir /opt/binaryninja/man to your MANPATH)
+ - latexpdf (with 'latexmk' debian package, a 711 pages `BinaryNinjaAPIDocumentation.pdf` was generated)
+
 ## Edit 
   I didn't succeed in using my license, then I started to disable the code for verifying license. Here is the patch I used ... and you can avoid setting the env vars BNLICENSE and BN_DISABLE_USER_PLUGINS. Of course adapt the `/opt/binaryninja/python/binaryninja/__init__.py` path to whereabout is your binaryninja install directory.
-  
-***Take care to revert your changes after having generated your files for avoiding to changes binary ninja behaviour***
 
-Perhaps there is a better way to be able to generate these docs but until someone found it ... it is better than nothing ;-)
+> [!CAUTION]
+> ***Take care to revert your changes after having generated your files for avoiding to changes binary ninja behaviour***
 
 ```patch
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -73,3 +77,17 @@ Perhaps there is a better way to be able to generate these docs but until someon
  _destruct_callbacks = _DestructionCallbackHandler()
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ```
+
+> [!TIP]
+> Perhaps there is a better way to be able to generate these docs but until someone found it ... it is better than nothing ;-)
+
+# cppdocs
+
+I successfully generated the cpp docs (the ones that are published on [BinaryNinja C++ API](https://api.binary.ninja/cpp/) by just using Doxygen
+The makefile try to generate doc through poetry but a toml file is missing. I assumed it was a deprecated generation method.
+
+```bash
+$ doxygen Doxyfile-HTML
+```
+
+

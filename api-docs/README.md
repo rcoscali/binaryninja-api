@@ -12,6 +12,39 @@ In order to build these docs, you'll need:
     * $ export BN_DISABLE_USER_PLUGINS
 
 Once all done, you can use 'make html'. I didn't try yet other formats, but you will obsviously need other tools for generated these formats...
+
+```bash
+rcoscali@ubuntu-lx-23-10:~/Sources/binaryninja-api/api-docs$ make
+Please use `make <target>' where <target> is one of
+  html       to make standalone HTML files
+  dirhtml    to make HTML files named index.html in directories
+  singlehtml to make a single large HTML file
+  pickle     to make pickle files
+  json       to make JSON files
+  htmlhelp   to make HTML files and a HTML help project
+  qthelp     to make HTML files and a qthelp project
+  applehelp  to make an Apple Help Book
+  devhelp    to make HTML files and a Devhelp project
+  epub       to make an epub
+  epub3      to make an epub3
+  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter
+  latexpdf   to make LaTeX files and run them through pdflatex
+  latexpdfja to make LaTeX files and run them through platex/dvipdfmx
+  text       to make text files
+  man        to make manual pages
+  texinfo    to make Texinfo files
+  info       to make Texinfo files and run them through makeinfo
+  gettext    to make PO message catalogs
+  changes    to make an overview of all changed/added/deprecated items
+  xml        to make Docutils-native XML files
+  pseudoxml  to make pseudoxml-XML files for display purposes
+  dashdoc    to make a Dash docset
+  linkcheck  to check all external links for integrity
+  doctest    to run all doctests embedded in the documentation (if enabled)
+  coverage   to run coverage check of the documentation (if enabled)
+  dummy      to check syntax errors of document sources
+```
+
 The built documentation is then available in the build/<target> directory (build/html for 'make html', build/singlehtml for 'make singlehtml', etc ...)
 Do not hesitate to document more here if needed ;-)
 

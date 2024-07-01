@@ -10,7 +10,9 @@ In order to build these docs, you'll need:
     * $ export BNLICENSE=<LicenseDirectory>/license.txt
  - Set the BN_DISABLE_USER_PLUGINS env var to disable user plugins that are not of great interest for the api docs
     * $ export BN_DISABLE_USER_PLUGINS
+
 Once all done, you can use 'make html'. I didn't try yet other formats, but you will obsviously need other tools for generated these formats...
+The built documentation is then available in the build/<target> directory (build/html for 'make html', build/singlehtml for 'make singlehtml', etc ...)
 Do not hesitate to document more here if needed ;-)
 
 Edit: 

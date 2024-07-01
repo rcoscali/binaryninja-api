@@ -17,6 +17,7 @@ Do not hesitate to document more here if needed ;-)
 Edit: 
   I didn't succeed in using my license, then I started to disable the code for verifying license. Here is the patch I used ... and you can avoid setting the env vars BNLICENSE and BN_DISABLE_USER_PLUGINS
 
+```patch
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 --- /opt/binaryninja/python/binaryninja/__init__.py.orig	2024-07-01 10:44:49.485119894 +0200
 +++ /opt/binaryninja/python/binaryninja/__init__.py	2024-07-01 10:45:32.667703975 +0200
@@ -33,3 +34,4 @@ Edit:
  
  _destruct_callbacks = _DestructionCallbackHandler()
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+```

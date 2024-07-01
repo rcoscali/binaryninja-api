@@ -20,7 +20,7 @@ setvars()
 	EXEC="${BNPATH}/binaryninja"
 	PNG="${BNPATH}/docs/img/logo.png"
 	EXT="bndb"
-  SHARE="${HOME}/.local/share" #For user only
+	SHARE="${HOME}/.local/share" #For user only
 	DESKTOPFILE="${SHARE}/applications/${APPID}.desktop"
 	OLDDESKTOPFILE="${SHARE}/applications/${APP}.desktop"
 	MIMEFILE="${SHARE}/mime/packages/application-x-${APP}.xml"
@@ -81,7 +81,7 @@ createdesktopfile()
 	echo Creating .desktop file
 
 	# Desktop File
-	read -d '' DESKTOP << EOF
+	read -d '' DESKTOP << +EOF
 [Desktop Entry]
 Name=${NAME}
 Exec=${EXEC// /\\\\ } %u
@@ -91,13 +91,13 @@ Terminal=false
 Type=Application
 Categories=Utility;
 Comment=${APPCOMMENT}
-EOF
-	read -d '' MIMEAPPS << EOF
++EOF
+	read -d '' MIMEAPPS << +EOF
 [Added Associations]
 application/x-executable=${APP}.desktop
 application/x-elf=${APP}.desktop
 application/x-sharedlib=${APP}.desktop
-EOF
++EOF
 	echo "${DESKTOP}" | $SUDO tee ${DESKTOPFILE} >/dev/null
 	echo "${MIMEAPPS}" | $SUDO tee -a ${MIMEFILE} >/dev/null
 	$SUDO chmod +x ${DESKTOPFILE}

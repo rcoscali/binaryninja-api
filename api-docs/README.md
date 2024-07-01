@@ -49,7 +49,7 @@ The built documentation is then available in the build/<target> directory (build
 Do not hesitate to document more here if needed ;-)
 
 ## Edit 
-  I didn't succeed in using my license, then I started to disable the code for verifying license. Here is the patch I used ... and you can avoid setting the env vars BNLICENSE and BN_DISABLE_USER_PLUGINS. Of course adapt the /opt/binaryninja/python/binaryninja/__init__.py path to whereabout is your binaryninja install directory.
+  I didn't succeed in using my license, then I started to disable the code for verifying license. Here is the patch I used ... and you can avoid setting the env vars BNLICENSE and BN_DISABLE_USER_PLUGINS. Of course adapt the `/opt/binaryninja/python/binaryninja/__init__.py` path to whereabout is your binaryninja install directory.
   
 ***Take care to revert your changes after having generated your files for avoiding to changes binary ninja behaviour***
 
